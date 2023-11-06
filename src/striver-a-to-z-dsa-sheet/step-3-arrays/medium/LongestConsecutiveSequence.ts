@@ -1,11 +1,10 @@
 /*
 	Problem Link: https://leetcode.com/problems/longest-consecutive-sequence/description
 */
-import { inputLeetCodeArr } from "../../../utils/input";
 
-type ProblemSolution = (arr: number[]) => number;
+type TProblem = (arr: number[]) => number;
 
-const brute: ProblemSolution = arr => {
+const brute: TProblem = arr => {
 	if (arr.length === 0) return 0;
 
 	let longestConsecutiveSeq = 1;
@@ -26,9 +25,9 @@ const brute: ProblemSolution = arr => {
 	return longestConsecutiveSeq;
 };
 
-const optimized: ProblemSolution = arr => {
+const optimized: TProblem = arr => {
 	// sort the array
-	arr.sort();
+	arr.sort((a, b) => a - b);
 
 	let longestSubSeq = 1;
 	let lastElem = arr[0],
@@ -49,7 +48,7 @@ const optimized: ProblemSolution = arr => {
 	return longestSubSeq;
 };
 
-const optimal: ProblemSolution = arr => {
+const optimal: TProblem = arr => {
 	if (arr.length === 0) return 0;
 
 	const set = new Set(arr);
@@ -67,8 +66,3 @@ const optimal: ProblemSolution = arr => {
 
 	return longestSubSeq;
 };
-
-(() => {
-	console.log(optimal([100, 4, 200, 1, 3, 2]));
-	process.exit();
-})();

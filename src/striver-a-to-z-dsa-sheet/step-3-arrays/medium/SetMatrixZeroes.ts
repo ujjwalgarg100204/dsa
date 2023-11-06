@@ -3,9 +3,11 @@
     Solution Link: https://takeuforward.org/data-structure/set-matrix-zero/
 */
 
-import { cloneMatrix, print2DMatrix } from "@utils/array";
+import { TestCase } from "@/types";
+import { judgeProblem } from "@/utils";
+import { cloneMatrix } from "@utils/array";
 
-type ProblemSolution = (matrix: number[][]) => void;
+type TProblem = (matrix: number[][]) => void;
 
 const utils = {
 	makeRow0(matrix: number[][], row: number): void {
@@ -16,7 +18,7 @@ const utils = {
 	},
 };
 
-const brute: ProblemSolution = matrix => {
+const brute: TProblem = matrix => {
 	const copy = cloneMatrix(matrix);
 
 	for (let row = 0; row < copy.length; row++)
@@ -27,7 +29,7 @@ const brute: ProblemSolution = matrix => {
 			}
 };
 
-const optimal: ProblemSolution = matrix => {
+const optimal: TProblem = matrix => {
 	let firstCell = 1;
 
 	// mark the first row and column as 0s based on inner matrix
@@ -62,28 +64,18 @@ const optimal: ProblemSolution = matrix => {
 		for (let i = 0; i < matrix.length; i++) matrix[i][0] = 0;
 };
 
-(() => {
-	const solutions = [brute, optimal] as const;
-	const testCases: number[][][] = [
+const solutions = [brute, optimal];
+const testCases: TestCase<TProblem>[] = [
+	[
 		[
-			[1, 1, 1],
-			[1, 0, 1],
-			[1, 1, 1],
+			[
+				[1, 1, 1],
+				[1, 0, 1],
+				[1, 1, 1],
+			],
 		],
-		[
-			[0, 1, 2, 0],
-			[3, 4, 5, 2],
-			[1, 3, 1, 5],
-		],
-	];
+		(() => {})(),
+	],
+];
 
-	for (const sol of solutions) {
-		console.log(`Running solution ${sol.name}:`);
-		for (const test of testCases) {
-			const clone = cloneMatrix(test);
-			sol(clone);
-			print2DMatrix(clone);
-			console.log();
-		}
-	}
-})();
+judgeProblem(solutions, testCases, import.meta.file);

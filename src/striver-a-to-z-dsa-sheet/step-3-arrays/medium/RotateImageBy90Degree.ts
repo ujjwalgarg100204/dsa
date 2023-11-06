@@ -1,13 +1,15 @@
-import { cloneMatrix, print2DMatrix } from "@utils/array";
+import { TestCase } from "@/types";
+import { judgeProblem } from "@/utils";
+import { cloneMatrix } from "@utils/array";
 
 /* 
 	Problem Link: https://leetcode.com/problems/rotate-image/
 	Solution Link: https://takeuforward.org/data-structure/rotate-image-by-90-degree/
 */
 
-type ProblemSolution = (matrix: number[][]) => void;
+type TProblem = (matrix: number[][]) => void;
 
-const brute: ProblemSolution = matrix => {
+const brute: TProblem = matrix => {
 	const n = matrix.length;
 	const clone = cloneMatrix(matrix);
 
@@ -20,7 +22,7 @@ const brute: ProblemSolution = matrix => {
 	}
 };
 
-const optimal: ProblemSolution = matrix => {
+const optimal: TProblem = matrix => {
 	const n = matrix.length;
 
 	// reverse the matrix
@@ -36,7 +38,7 @@ const optimal: ProblemSolution = matrix => {
 	}
 };
 
-const optimal2: ProblemSolution = matrix => {
+const optimal2: TProblem = matrix => {
 	const n = matrix.length;
 
 	// take transpose of the matrix
@@ -53,30 +55,19 @@ const optimal2: ProblemSolution = matrix => {
 	for (const arr of matrix) arr.reverse();
 };
 
-(() => {
-	const testCases = [
+const solutions = [brute, optimal, optimal2];
+const testCases: TestCase<TProblem>[] = [
+	[
 		[
-			[1, 2, 3],
-			[4, 5, 6],
-			[7, 8, 9],
+			[
+				[1, 2, 3],
+				[4, 5, 6],
+				[7, 8, 9],
+			],
 		],
-		[
-			[5, 1, 9, 11],
-			[2, 4, 8, 10],
-			[13, 3, 6, 7],
-			[15, 14, 12, 16],
-		],
-	];
 
-	const solutions = [brute, optimal, optimal2] as const;
+		(() => {})(),
+	],
+];
 
-	for (const solution of solutions) {
-		console.log(`Running solution ${solution.name}:`);
-		for (const testCase of testCases) {
-			const clone = cloneMatrix(testCase);
-			solution(clone);
-			print2DMatrix(clone);
-			console.log();
-		}
-	}
-})();
+judgeProblem(solutions, testCases, import.meta.file);

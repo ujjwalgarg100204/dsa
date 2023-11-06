@@ -9,6 +9,19 @@ export const isPrime = (n: number): boolean => {
 	return true;
 };
 
+const calculatedFactorials = new Map<number, number>([
+	[0, 1],
+	[1, 1],
+]);
+export const factorial = (n: number): number => {
+	const calculated = calculatedFactorials.get(n);
+	if (calculated) return calculated;
+
+	const ans = n * factorial(n - 1);
+	calculatedFactorials.set(n, ans);
+	return ans;
+};
+
 export const reverseBits = (n: number): number => {
 	let reversed = 0;
 	while (n != 0) {
