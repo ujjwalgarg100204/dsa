@@ -33,3 +33,7 @@ export const max = (arr: number[]): number => {
 	for (const i of arr) max = Math.max(max, i);
 	return max;
 };
+
+export const arrayEquals = (a: unknown[], b: unknown[]): boolean => {
+	return a.length === b.length && a.every((val, index) => val === b[index]);
+};

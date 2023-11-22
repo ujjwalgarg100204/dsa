@@ -1,60 +1,68 @@
-/*
-	Problem Link: https://leetcode.com/problems/spiral-matrix/
-	Solution Link: https://takeuforward.org/data-structure/spiral-traversal-of-matrix/
-*/
+import { Solution, SolutionImplementation, TestCase } from "@/types";
 
-import { TestCase } from "@/types";
-import { judgeProblem } from "@/utils";
+import ManualTesting from "@/ManualTesting";
 
-type TProblem = (matrix: readonly number[][]) => number[];
+type Input = { matrix: number[][] };
 
-const brute: TProblem = matrix => {
-	const spiral: number[] = [];
-	// first row
-	for (const element of matrix[0]) {
-		spiral.push(element);
+class MatrixInSpiralMannerSolution implements Solution<Input, number[]> {
+	getName(): string {
+		return "Matrix In Spiral Manner";
+	}
+	getProblemLink(): string {
+		return "https://leetcode.com/problems/spiral-matrix/";
+	}
+	getImplementations(): ((input: Input) => number[])[] {
+		return [this.brute];
+	}
+	getTestCases(): TestCase<Input, number[]>[] {
+		return [
+			{
+				input: {
+					matrix: [
+						[1, 2, 3],
+						[8, 9, 4],
+						[7, 6, 5],
+					],
+				},
+				expected: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+			},
+			{
+				input: {
+					matrix: [
+						[0, 1, 2, 0],
+						[3, 4, 5, 2],
+						[1, 3, 1, 5],
+					],
+				},
+				expected: [0, 1, 2, 0, 2, 5, 1, 3, 1, 3, 4, 5],
+			},
+		];
 	}
 
-	// last col
-	for (const element of matrix) {
-		spiral.push(element[matrix.length - 1]);
-	}
+	brute: SolutionImplementation<Input, number[]> = ({ matrix }) => {
+		const spiral: number[] = [];
+		// first row
+		for (const element of matrix[0]) {
+			spiral.push(element);
+		}
 
-	// last row
-	for (let i = matrix[0].length - 1; i >= 0; i--) {
-		spiral.push(matrix[matrix.length - 1][i]);
-	}
+		// last col
+		for (const element of matrix) {
+			spiral.push(element[matrix.length - 1]);
+		}
 
-	// left col
-	for (let i = matrix.length - 1; i > 0; i--) {
-		spiral.push(matrix[i][0]);
-	}
+		// last row
+		for (let i = matrix[0].length - 1; i >= 0; i--) {
+			spiral.push(matrix[matrix.length - 1][i]);
+		}
 
-	return spiral;
-};
+		// left col
+		for (let i = matrix.length - 1; i > 0; i--) {
+			spiral.push(matrix[i][0]);
+		}
 
-const solutions = [brute];
-const testCases: TestCase<TProblem>[] = [
-	[
-		[
-			[
-				[1, 2, 3],
-				[8, 9, 4],
-				[7, 6, 5],
-			],
-		],
-		[1, 2, 3, 4, 5, 6, 7, 8, 9],
-	],
-	[
-		[
-			[
-				[0, 1, 2, 0],
-				[3, 4, 5, 2],
-				[1, 3, 1, 5],
-			],
-		],
-		[0, 1, 2, 0, 2, 5, 1, 3, 1, 3, 4, 5],
-	],
-];
+		return spiral;
+	};
+}
 
-judgeProblem(solutions, testCases, import.meta.file);
+new ManualTesting().test(new MatrixInSpiralMannerSolution());

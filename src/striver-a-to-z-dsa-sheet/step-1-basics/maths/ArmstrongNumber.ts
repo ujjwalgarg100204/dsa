@@ -1,28 +1,41 @@
+import { Solution, SolutionImplementation } from "../../../types";
+
+import ManualTesting from "@/ManualTesting";
 import { TestCase } from "@/types";
-import { judgeProblem } from "@/utils";
 
-type TProblem = (n: number) => boolean;
+type Input = { n: number };
 
-const optimal: TProblem = n => {
-	const numOfDigs = Math.floor(Math.log10(n)) + 1;
-
-	let numCpy = n;
-	let sum = 0;
-	while (n != 0) {
-		const lastDig = n % 10;
-		sum += Math.pow(lastDig, numOfDigs);
-		n = Math.floor(n / 10);
+class ArmstrongNumberSolution implements Solution<Input, boolean> {
+	getName(): string {
+		return "Armstrong Number";
 	}
-	return numCpy === sum;
-};
+	getProblemLink(): string {
+		return "";
+	}
+	getImplementations(): ((input: Input) => boolean)[] {
+		return [this.optimal];
+	}
+	getTestCases(): TestCase<Input, boolean>[] {
+		return [
+			{ input: { n: 1 }, expected: true },
+			{ input: { n: 1634 }, expected: true },
+			{ input: { n: 103 }, expected: false },
+			{ input: { n: 103 }, expected: true },
+		];
+	}
 
-const solutions = [optimal];
+	optimal: SolutionImplementation<Input, boolean> = ({ n }) => {
+		const numOfDigs = Math.floor(Math.log10(n)) + 1;
 
-const testCases: TestCase<TProblem>[] = [
-	[[1], true],
-	[[1634], true],
-	[[103], false],
-	[[103], true],
-];
+		let numCpy = n;
+		let sum = 0;
+		while (n != 0) {
+			const lastDig = n % 10;
+			sum += Math.pow(lastDig, numOfDigs);
+			n = Math.floor(n / 10);
+		}
+		return numCpy === sum;
+	};
+}
 
-judgeProblem(solutions, testCases, import.meta.file);
+new ManualTesting().test(new ArmstrongNumberSolution());

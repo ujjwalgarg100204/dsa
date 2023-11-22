@@ -1,11 +1,89 @@
-/*	
-	Problem Link: https://leetcode.com/problems/valid-sudoku/description/
-*/
+import ManualTesting from "@/ManualTesting";
+import { Solution, SolutionImplementation, TestCase } from "@/types";
 
-import { TestCase } from "@/types";
-import { judgeProblem } from "@/utils";
+type Input = {
+	board: (
+		| "1"
+		| "2"
+		| "3"
+		| "4"
+		| "5"
+		| "6"
+		| "7"
+		| "8"
+		| "9"
+		| "0"
+		| "."
+	)[][]; // empty cell
+};
 
-type TProblem = (board: string[][]) => boolean;
+class ValidSudokuSolution implements Solution<Input, boolean> {
+	getName(): string {
+		return "Valid Sudoku";
+	}
+	getProblemLink(): string {
+		return "https://leetcode.com/problems/valid-sudoku";
+	}
+	getImplementations(): ((input: Input) => boolean)[] {
+		return [this.brute];
+	}
+	getTestCases(): TestCase<Input, boolean>[] {
+		return [
+			{
+				input: {
+					board: [
+						["5", "3", ".", ".", "7", ".", ".", ".", "."],
+						["6", ".", ".", "1", "9", "5", ".", ".", "."],
+						[".", "9", "8", ".", ".", ".", ".", "6", "."],
+						["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+						["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+						["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+						[".", "6", ".", ".", ".", ".", "2", "8", "."],
+						[".", ".", ".", "4", "1", "9", ".", ".", "5"],
+						[".", ".", ".", ".", "8", ".", ".", "7", "9"],
+					],
+				},
+				expected: true,
+			},
+			{
+				input: {
+					board: [
+						["8", "3", ".", ".", "7", ".", ".", ".", "."],
+						["6", ".", ".", "1", "9", "5", ".", ".", "."],
+						[".", "9", "8", ".", ".", ".", ".", "6", "."],
+						["8", ".", ".", ".", "6", ".", ".", ".", "3"],
+						["4", ".", ".", "8", ".", "3", ".", ".", "1"],
+						["7", ".", ".", ".", "2", ".", ".", ".", "6"],
+						[".", "6", ".", ".", ".", ".", "2", "8", "."],
+						[".", ".", ".", "4", "1", "9", ".", ".", "5"],
+						[".", ".", ".", ".", "8", ".", ".", "7", "9"],
+					],
+				},
+				expected: false,
+			},
+		];
+	}
+
+	brute: SolutionImplementation<Input, boolean> = ({ board }) => {
+		for (let i = 0; i < board.length; i++) {
+			for (let j = 0; j < board.length; j++) {
+				// if cell is empty continue to next non-empty cell
+				if (board[i][j] === ".") continue;
+
+				const cell = { row: i, col: j };
+				// check occurrence of cell in row
+				if (occurrenceInRow(board, cell) > 1) return false;
+
+				// check occurrence of cell in col
+				if (occurrenceInCol(board, cell) > 1) return false;
+
+				// check occurrence of cell in current grid
+				if (occurrenceOfCellInGrid(board, cell) > 1) return false;
+			}
+		}
+		return true;
+	};
+}
 
 type Cell = { row: number; col: number };
 
@@ -57,60 +135,4 @@ const occurrenceOfCellInGrid = (board: string[][], cell: Cell): number => {
 	return occurrence;
 };
 
-const brute: TProblem = board => {
-	for (let i = 0; i < board.length; i++) {
-		for (let j = 0; j < board.length; j++) {
-			// if cell is empty continue to next non-empty cell
-			if (board[i][j] === ".") continue;
-
-			const cell = { row: i, col: j };
-			// check occurrence of cell in row
-			if (occurrenceInRow(board, cell) > 1) return false;
-
-			// check occurrence of cell in col
-			if (occurrenceInCol(board, cell) > 1) return false;
-
-			// check occurrence of cell in current grid
-			if (occurrenceOfCellInGrid(board, cell) > 1) return false;
-		}
-	}
-	return true;
-};
-
-const solutions = [brute];
-const testCases: TestCase<TProblem>[] = [
-	[
-		[
-			[
-				["5", "3", ".", ".", "7", ".", ".", ".", "."],
-				["6", ".", ".", "1", "9", "5", ".", ".", "."],
-				[".", "9", "8", ".", ".", ".", ".", "6", "."],
-				["8", ".", ".", ".", "6", ".", ".", ".", "3"],
-				["4", ".", ".", "8", ".", "3", ".", ".", "1"],
-				["7", ".", ".", ".", "2", ".", ".", ".", "6"],
-				[".", "6", ".", ".", ".", ".", "2", "8", "."],
-				[".", ".", ".", "4", "1", "9", ".", ".", "5"],
-				[".", ".", ".", ".", "8", ".", ".", "7", "9"],
-			],
-		],
-		true,
-	],
-	[
-		[
-			[
-				["8", "3", ".", ".", "7", ".", ".", ".", "."],
-				["6", ".", ".", "1", "9", "5", ".", ".", "."],
-				[".", "9", "8", ".", ".", ".", ".", "6", "."],
-				["8", ".", ".", ".", "6", ".", ".", ".", "3"],
-				["4", ".", ".", "8", ".", "3", ".", ".", "1"],
-				["7", ".", ".", ".", "2", ".", ".", ".", "6"],
-				[".", "6", ".", ".", ".", ".", "2", "8", "."],
-				[".", ".", ".", "4", "1", "9", ".", ".", "5"],
-				[".", ".", ".", ".", "8", ".", ".", "7", "9"],
-			],
-		],
-		false,
-	],
-];
-
-judgeProblem(solutions, testCases, import.meta.file);
+new ManualTesting().test(new ValidSudokuSolution());

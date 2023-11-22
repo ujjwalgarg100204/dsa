@@ -1,64 +1,72 @@
-/*
-	Problem Link: https://leetcode.com/problems/spiral-matrix/
-*/
+import { Solution, SolutionImplementation, TestCase } from "@/types";
 
-import { TestCase } from "@/types";
-import { judgeProblem } from "@/utils";
+import ManualTesting from "@/ManualTesting";
 
-type TProblem = (matrix: number[][]) => number[];
-
-const optimal: TProblem = matrix => {
-	const ans: ReturnType<TProblem> = [];
-
-	let top = 0,
-		left = 0,
-		right = matrix[0].length - 1,
-		bottom = matrix.length - 1;
-
-	while (top <= bottom && left <= right) {
-		// top row
-		for (let i = left; i <= right; i++) ans.push(matrix[top][i]);
-		top++;
-		// right row
-		for (let i = top; i <= bottom; i++) ans.push(matrix[i][right]);
-		right--;
-
-		if (top <= bottom) {
-			// bottom row
-			for (let i = right; i >= left; i--) ans.push(matrix[bottom][i]);
-			bottom--;
-		}
-		if (left <= right) {
-			// left row
-			for (let i = bottom; i >= top; i--) ans.push(matrix[i][left]);
-			left++;
-		}
+type Input = { matrix: number[][] };
+class SpiralMatrixSolution implements Solution<Input, number[]> {
+	getName(): string {
+		return "Spiral Matrix";
 	}
-	return ans;
-};
+	getProblemLink(): string {
+		return "https://leetcode.com/problems/spiral-matrix/";
+	}
+	getImplementations(): ((input: Input) => number[])[] {
+		return [this.optimal];
+	}
+	getTestCases(): TestCase<Input, number[]>[] {
+		return [
+			{
+				input: {
+					matrix: [
+						[1, 2, 3],
+						[4, 5, 6],
+						[7, 8, 9],
+					],
+				},
+				expected: [1, 2, 3, 6, 9, 8, 7, 4, 5],
+			},
+			{
+				input: {
+					matrix: [
+						[1, 2, 3, 4],
+						[5, 6, 7, 8],
+						[9, 10, 11, 12],
+					],
+				},
+				expected: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7],
+			},
+		];
+	}
 
-const solutions: TProblem[] = [optimal];
-const testCases: TestCase<TProblem>[] = [
-	[
-		[
-			[
-				[1, 2, 3],
-				[4, 5, 6],
-				[7, 8, 9],
-			],
-		],
-		[1, 2, 3, 6, 9, 8, 7, 4, 5],
-	],
-	[
-		[
-			[
-				[1, 2, 3, 4],
-				[5, 6, 7, 8],
-				[9, 10, 11, 12],
-			],
-		],
-		[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7],
-	],
-];
+	optimal: SolutionImplementation<Input, number[]> = ({ matrix }) => {
+		const ans: number[] = [];
 
-judgeProblem(solutions, testCases, import.meta.file);
+		let top = 0,
+			left = 0,
+			right = matrix[0].length - 1,
+			bottom = matrix.length - 1;
+
+		while (top <= bottom && left <= right) {
+			// top row
+			for (let i = left; i <= right; i++) ans.push(matrix[top][i]);
+			top++;
+			// right row
+			for (let i = top; i <= bottom; i++) ans.push(matrix[i][right]);
+			right--;
+
+			if (top <= bottom) {
+				// bottom row
+				for (let i = right; i >= left; i--) ans.push(matrix[bottom][i]);
+				bottom--;
+			}
+			if (left <= right) {
+				// left row
+				for (let i = bottom; i >= top; i--) ans.push(matrix[i][left]);
+				left++;
+			}
+		}
+		return ans;
+	};
+}
+
+new ManualTesting().test(new SpiralMatrixSolution());
