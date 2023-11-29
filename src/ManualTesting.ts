@@ -1,10 +1,15 @@
 import { Solution, Test, TestCase } from "./types";
 
-import _ from "lodash";
 import chalk from "chalk";
 import { log } from "console";
+import _ from "lodash";
 
 class ManualTesting implements Test {
+	/**
+	 * Runs the test for the given solution.
+	 *
+	 * @param solution - The solution to test.
+	 */
 	test: (solution: Solution<any, any>) => void = solution => {
 		// get all the implementations and test-cases
 		const implementations = solution.getImplementations();
@@ -105,6 +110,13 @@ class ManualTesting implements Test {
 		}
 	};
 
+	/**
+	 * Runs a test case for a given implementation.
+	 *
+	 * @param implementation - The implementation function to test.
+	 * @param testCase - The test case to run.
+	 * @returns `true` if the test case passes, `false` otherwise.
+	 */
 	private runTestCase(
 		implementation: (input: any) => any,
 		testCase: TestCase<any, any>
@@ -139,4 +151,5 @@ class ManualTesting implements Test {
 		return false;
 	}
 }
+
 export default ManualTesting;
