@@ -1,3 +1,8 @@
+/**
+ * Checks if a number is prime.
+ * @param n - The number to check.
+ * @returns True if the number is prime, false otherwise.
+ */
 export const isPrime = (n: number): boolean => {
 	if (n < 2) return false;
 	if (n == 2 || n == 3) return true;
@@ -9,10 +14,20 @@ export const isPrime = (n: number): boolean => {
 	return true;
 };
 
+/**
+ * A map that stores pre-calculated factorials.
+ * The keys represent the numbers for which the factorial is calculated,
+ * and the values represent the corresponding factorial values.
+ */
 const calculatedFactorials = new Map<number, number>([
 	[0, 1],
 	[1, 1],
 ]);
+/**
+ * Calculates the factorial of a given number.
+ * @param n - The number to calculate the factorial for.
+ * @returns The factorial of the given number.
+ */
 export const factorial = (n: number): number => {
 	const calculated = calculatedFactorials.get(n);
 	if (calculated) return calculated;
@@ -22,6 +37,11 @@ export const factorial = (n: number): number => {
 	return ans;
 };
 
+/**
+ * Reverses the bits of a given number.
+ * @param n - The number to reverse the bits of.
+ * @returns The number with reversed bits.
+ */
 export const reverseBits = (n: number): number => {
 	let reversed = 0;
 	while (n != 0) {
@@ -32,6 +52,12 @@ export const reverseBits = (n: number): number => {
 	return reversed;
 };
 
+/**
+ * Converts a string into an array of its individual digits.
+ *
+ * @param n - The string to convert.
+ * @returns An array of the individual digits of the input string.
+ */
 export const getDigits = (n: string): number[] => {
 	return n.split("").map(i => +i);
 };
