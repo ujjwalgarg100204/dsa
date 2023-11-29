@@ -1,13 +1,8 @@
 import { Solution, Test, TestCase } from "./types";
 
-import { arrayEquals } from "@utils/array";
 import chalk from "chalk";
 import { log } from "console";
-
-const checkEquality = (a: unknown, b: unknown): boolean => {
-	if (Array.isArray(a) && Array.isArray(b)) return arrayEquals(a, b);
-	return a === b;
-};
+import _ from "lodash";
 
 class ManualTesting implements Test {
 	test: (solution: Solution<any, any>) => void = solution => {
@@ -44,10 +39,12 @@ class ManualTesting implements Test {
 			end = performance.now();
 
 			const str = `Expected ${chalk.bold(
-				chalk.underline(expected)
-			)} and got ${chalk.bold(chalk.underline(solReturnVal))}`;
+				chalk.underline(JSON.stringify(expected))
+			)} and got ${chalk.bold(
+				chalk.underline(JSON.stringify(solReturnVal))
+			)}`;
 
-			if (checkEquality(solReturnVal, expected))
+			if (_.isEqual(solReturnVal, expected))
 				log(chalk.greenBright(`\t✓ ${str}`));
 			else log(chalk.redBright(`\t✗ ${str}`));
 		} catch (err) {
