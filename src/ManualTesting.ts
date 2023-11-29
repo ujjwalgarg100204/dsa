@@ -35,7 +35,7 @@ class ManualTesting implements Test {
 		let end = 1;
 		const start = performance.now();
 		try {
-			const solReturnVal = implementation(input);
+			const solReturnVal = implementation(_.cloneDeep(input));
 			end = performance.now();
 
 			const str = `Expected ${chalk.bold(
