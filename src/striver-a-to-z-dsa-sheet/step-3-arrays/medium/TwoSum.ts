@@ -18,7 +18,7 @@ class TwoSumSolution implements Solution<Input, "YES" | "NO"> {
 			{ input: { arr: [2, 7, 11, 15], k: 9 }, expected: "YES" },
 			{ input: { arr: [2, 7, 11, 15], k: 10 }, expected: "NO" },
 			{ input: { arr: [2, 7, 11, 15], k: 17 }, expected: "YES" },
-			{ input: { arr: [2, 7, 11, 15], k: 18 }, expected: "NO" },
+			{ input: { arr: [2, 7, 11, 15], k: 18 }, expected: "YES" },
 			{ input: { arr: [2, 7, 11, 15], k: 26 }, expected: "YES" },
 			{ input: { arr: [2, 7, 11, 15], k: 27 }, expected: "NO" },
 			{ input: { arr: [2, 7, 11, 15], k: 13 }, expected: "YES" },
@@ -39,11 +39,25 @@ class TwoSumSolution implements Solution<Input, "YES" | "NO"> {
 
 		let left = 0,
 			right = arr.length - 1;
-		while (left <= right) {
+		while (left < right) {
 			const sum = arr[left] + arr[right];
 			if (sum === k) return "YES";
 			else if (sum < k) left++;
 			else right--;
+		}
+		return "NO";
+	};
+
+	optimalWithMem: SolutionImplementation<Input, "YES" | "NO"> = ({
+		arr,
+		k,
+	}) => {
+		const set = new Set<number>(arr);
+
+		for (const i of arr) {
+			if (set.has(k - i)) {
+				return "YES";
+			}
 		}
 		return "NO";
 	};
