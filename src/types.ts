@@ -20,7 +20,7 @@ export interface Solution<InputType, ReturnType> {
 	 * Gets the implementations of the solution.
 	 * @returns An array of functions that implement the solution.
 	 */
-	getImplementations(): ((input: InputType) => ReturnType)[];
+	getImplementations(): SolutionImplementation<InputType, ReturnType>[];
 
 	/**
 	 * Gets the test cases for the solution.
