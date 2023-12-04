@@ -124,9 +124,10 @@ class ManualTesting implements Test {
 		const { input, expected } = testCase;
 
 		let end = 1;
+		const argClone = _.cloneDeep(input);
 		const start = performance.now();
 		try {
-			const solReturnVal = implementation(_.cloneDeep(input));
+			const solReturnVal = implementation(argClone);
 			end = performance.now();
 
 			const str = `Expected ${chalk.bold(
