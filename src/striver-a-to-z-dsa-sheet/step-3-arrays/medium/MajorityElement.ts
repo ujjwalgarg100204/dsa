@@ -7,7 +7,7 @@ type Output = number;
 
 class MajorityElementSolution implements Solution<Input, Output> {
 	getName(): string {
-		return "Majority Elment";
+		return "Majority Element";
 	}
 	getProblemLink(): string {
 		return "https://leetcode.com/problems/majority-element/description";
@@ -40,12 +40,12 @@ class MajorityElementSolution implements Solution<Input, Output> {
 
 	optimal: SolutionImplementation<Input, Output> = ({ arr }) => {
 		let majorityEl = arr[0],
-			count = 1;
-		for (let i = 1; i < arr.length; i++) {
+			count = 0;
+		for (const i of arr) {
 			if (count === 0) {
-				majorityEl = arr[i];
+				majorityEl = i;
 				count++;
-			} else if (arr[i] === majorityEl) {
+			} else if (i === majorityEl) {
 				count++;
 			} else {
 				count--;
