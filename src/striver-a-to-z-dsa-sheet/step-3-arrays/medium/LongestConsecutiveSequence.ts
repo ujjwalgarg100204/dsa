@@ -50,17 +50,17 @@ class LongestConsecutiveSequenceSolution implements Solution<Input, number> {
 		let lastElem = arr[0],
 			currSubSeq = 1;
 		for (let i = 1; i < arr.length; i++) {
-			if (lastElem == arr[i]) continue;
+			if (lastElem === arr[i]) continue;
 
 			const diff = arr[i] - lastElem;
-			if (diff == 1) currSubSeq++;
+			if (diff === 1) currSubSeq++;
 			else {
 				longestSubSeq = Math.max(longestSubSeq, currSubSeq);
 				currSubSeq = 1;
 			}
-
 			lastElem = arr[i];
 		}
+		longestSubSeq = Math.max(longestSubSeq, currSubSeq);
 
 		return longestSubSeq;
 	};
@@ -71,15 +71,17 @@ class LongestConsecutiveSequenceSolution implements Solution<Input, number> {
 		const set = new Set(arr);
 		let longestSubSeq = 1;
 
-		for (let i of set)
+		for (const i of set) {
 			if (!set.has(i - 1)) {
 				let currSubSeq = 1;
-				while (set.has(i + 1)) {
-					i++;
+				let j = i;
+				while (set.has(j + 1)) {
+					j++;
 					currSubSeq++;
 				}
 				longestSubSeq = Math.max(longestSubSeq, currSubSeq);
 			}
+		}
 
 		return longestSubSeq;
 	};
