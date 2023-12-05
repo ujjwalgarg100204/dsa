@@ -1,6 +1,13 @@
 {
 	"configurations": [
 		{
+			"type": "java",
+			"name": "Solution",
+			"request": "launch",
+			"mainClass": "Solution",
+			"projectName": "DSA-With-TS_6e624fd5"
+		},
+		{
 			"name": "Docker Node.js Launch",
 			"type": "docker",
 			"request": "launch",
