@@ -85,3 +85,53 @@ export const reverseArr = (arr: unknown[], start: number, end: number) => {
 		j++;
 	}
 };
+
+/**
+ * Partitions an array based on a pivot element.
+ * @param arr - The array to be partitioned.
+ * @param left - The left index of the partition range.
+ * @param right - The right index of the partition range.
+ * @returns The index of the pivot element after partitioning.
+ */
+const partition = (arr: number[], left: number, right: number) => {
+	let pivot = arr[Math.floor((right + left) / 2)];
+	let i = left;
+	let j = right;
+	while (i <= j) {
+		while (arr[i] < pivot) {
+			i++;
+		}
+		while (arr[j] > pivot) {
+			j--;
+		}
+
+		if (i <= j) {
+			let k = arr[i];
+			arr[i] = arr[j];
+			arr[j] = k;
+			i++;
+			j--;
+		}
+	}
+
+	return i;
+};
+
+/**
+ * Sorts an array using the Quick Sort algorithm.
+ * @param arr - The array to be sorted.
+ * @param left - The starting index of the subarray to be sorted.
+ * @param right - The ending index of the subarray to be sorted.
+ */
+export const quickSort = (arr: number[], left: number, right: number): void => {
+	let i: number;
+	if (arr.length > 1) {
+		i = partition(arr, left, right);
+		if (left < i - 1) {
+			quickSort(arr, left, i - 1);
+		}
+		if (i < right) {
+			quickSort(arr, i, right);
+		}
+	}
+};
