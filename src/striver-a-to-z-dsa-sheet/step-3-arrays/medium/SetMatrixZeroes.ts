@@ -12,7 +12,7 @@ class SetMatrixZeroesSolution implements Solution<Input, number[][]> {
 		return "https://leetcode.com/problems/set-matrix-zeroes/";
 	}
 	getImplementations(): ((input: Input) => number[][])[] {
-		return [this.brute, this.optimal];
+		return [this.brute, this.myOptimal, this.striverOptimal];
 	}
 	getTestCases(): TestCase<Input, number[][]>[] {
 		return [
@@ -39,19 +39,78 @@ class SetMatrixZeroesSolution implements Solution<Input, number[][]> {
 		for (let row = 0; row < copy.length; row++)
 			for (let col = 0; col < copy[row].length; col++)
 				if (copy[row][col] === 0) {
-					utils.makeRow0(matrix, row);
-					utils.makeCol0(matrix, col);
+					// make row 0
+					for (let i = 0; i < matrix[row].length; i++) {
+						matrix[row][i] = 0;
+					}
+					// make col 0
+					for (const row of matrix) {
+						row[col] = 0;
+					}
 				}
+
 		return matrix;
 	};
 
-	optimal: SolutionImplementation<Input, number[][]> = ({ matrix }) => {
+	myOptimal: SolutionImplementation<Input, number[][]> = ({ matrix }) => {
+		// check whether marker row and col should be made 0
+		let shouldMakeMarkerRow0 = false,
+			shouldMakeMarkerCol0 = false;
+		// check first column
+		for (const i of matrix[0]) {
+			if (i === 0) {
+				shouldMakeMarkerRow0 = true;
+				break;
+			}
+		}
+		// check first row
+		for (const row of matrix) {
+			if (row[0] === 0) {
+				shouldMakeMarkerCol0 = true;
+				break;
+			}
+		}
+
+		// iterate on the inner matrix, ie, from row 1 and col 1
+		for (let i = 1; i < matrix.length; i++) {
+			for (let j = 1; j < matrix[i].length; j++) {
+				if (matrix[i][j] !== 0) continue;
+				// cell is 0 then mark the row and column
+				matrix[0][j] = 0; //  mark the col
+				matrix[i][0] = 0; // mark the row
+			}
+		}
+
+		// iterate again to make cells 0
+		for (let i = 1; i < matrix.length; i++) {
+			for (let j = 1; j < matrix[i].length; j++) {
+				if (matrix[0][j] === 0 || matrix[i][0] === 0) {
+					matrix[i][j] = 0;
+				}
+			}
+		}
+
+		if (shouldMakeMarkerRow0) {
+			matrix[0].fill(0);
+		}
+
+		if (shouldMakeMarkerCol0) {
+			for (const row of matrix) {
+				row[0] = 0;
+			}
+		}
+
+		return matrix;
+	};
+	striverOptimal: SolutionImplementation<Input, number[][]> = ({
+		matrix,
+	}) => {
 		let firstCell = 1;
 
 		// mark the first row and column as 0s based on inner matrix
-		for (let i = 0; i < matrix.length; i++)
-			for (let j = 0; j < matrix[i].length; j++) {
-				if (matrix[i][j] !== 0) continue;
+		for (const row of matrix)
+			for (let j = 0; j < row.length; j++) {
+				if (row[j] !== 0) continue;
 
 				// matrix[i][j] is 0
 				// if first column is being checked then mark the firstCell instead
@@ -62,7 +121,7 @@ class SetMatrixZeroesSolution implements Solution<Input, number[][]> {
 					// mark the top row
 					matrix[0][j] = 0;
 					// mark the left col
-					matrix[i][0] = 0;
+					row[0] = 0;
 				}
 			}
 
@@ -76,19 +135,10 @@ class SetMatrixZeroesSolution implements Solution<Input, number[][]> {
 			for (let i = 0; i < matrix[0].length; i++) matrix[0][i] = 0;
 
 		// handle leftmost col
-		if (firstCell === 0)
-			for (let i = 0; i < matrix.length; i++) matrix[i][0] = 0;
+		if (firstCell === 0) for (const row of matrix) row[0] = 0;
 
 		return matrix;
 	};
 }
-const utils = {
-	makeRow0(matrix: number[][], row: number): void {
-		for (let i = 0; i < matrix[row].length; i++) matrix[row][i] = 0;
-	},
-	makeCol0(matrix: number[][], col: number): void {
-		for (let i = 0; i < matrix.length; i++) matrix[i][col] = 0;
-	},
-};
 
 new ManualTesting().test(new SetMatrixZeroesSolution());
