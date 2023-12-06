@@ -9,7 +9,9 @@ import { getDigits } from "./math";
  */
 export const cloneMatrix = <T>(matrix: T[][]): T[][] => {
 	const copy: T[][] = new Array(matrix.length);
-	for (const arr of matrix) copy.push([...arr]);
+	for (let i = 0; i < matrix.length; i++) {
+		copy[i] = cloneArr(matrix[i]);
+	}
 	return copy;
 };
 
@@ -27,9 +29,10 @@ export const print2DMatrix = (matrix: any[][]): void => {
 			arr.map(num => num.toString().padStart(maxDigits, " "))
 		);
 	}
-	for (let i = 0; i < matrix.length; i++) {
-		for (let j = 0; j < matrix[i].length; j++)
-			console.write(matrix[i][j] + " ");
+	for (const row of matrix) {
+		for (const i of row) {
+			console.write(i + " ");
+		}
 		console.write("\n");
 	}
 };
