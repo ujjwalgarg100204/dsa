@@ -85,37 +85,33 @@ class RotateImageBy90DegreeSolution implements Solution<Input, number[][]> {
 	};
 
 	optimal: SolutionImplementation<Input, number[][]> = ({ matrix }) => {
-		const n = matrix.length;
-
 		// reverse the matrix
 		matrix.reverse();
 
 		// now take transpose of matrix
-		for (let i = 0; i < n; i++) {
+		for (let i = 0, n = matrix.length; i < n; i++) {
 			for (let j = i; j < n; j++) {
-				const temp = matrix[i][j];
-				matrix[i][j] = matrix[j][i];
-				matrix[j][i] = temp;
+				// swap
+				[matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
 			}
 		}
 		return matrix;
 	};
 
 	optimal2: SolutionImplementation<Input, number[][]> = ({ matrix }) => {
-		const n = matrix.length;
-
 		// take transpose of the matrix
-		for (let i = 0; i < n; i++) {
+		for (let i = 0, n = matrix.length; i < n; i++) {
 			for (let j = 0; j < n; j++) {
 				if (i === j) break;
-				const temp = matrix[i][j];
-				matrix[i][j] = matrix[j][i];
-				matrix[j][i] = temp;
+				// swap
+				[matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
 			}
 		}
 
 		// reverse each array
-		for (const arr of matrix) arr.reverse();
+		for (const arr of matrix) {
+			arr.reverse();
+		}
 		return matrix;
 	};
 }
