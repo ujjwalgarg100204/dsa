@@ -138,3 +138,21 @@ export const quickSort = (arr: number[], left: number, right: number): void => {
 		}
 	}
 };
+
+/**
+ * Counts the number of occurrences of an element in an array.
+ *
+ * @template T The type of the array elements.
+ * @param {T[]} arr The array to search in.
+ * @param {T} elem The element to count occurrences of.
+ * @returns {number} The number of occurrences of the element in the array.
+ */
+export const count = <T>(arr: T[], elem: T): number => {
+	let count = 0;
+	for (const i of arr) {
+		if (i === elem) {
+			count++;
+		}
+	}
+	return count;
+};
