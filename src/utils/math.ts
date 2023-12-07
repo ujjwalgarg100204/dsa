@@ -61,3 +61,19 @@ export const reverseBits = (n: number): number => {
 export const getDigits = (n: string): number[] => {
 	return n.split("").map(i => +i);
 };
+
+/**
+ * Calculates the value of nCr (combination) using the formula n! / (r! * (n-r)!).
+ * @param n - The total number of items.
+ * @param r - The number of items to be selected.
+ * @returns The value of nCr.
+ */
+export const ncr = (n: number, r: number) => {
+	let ans = 1;
+
+	for (let i = 0; i < r; i++) {
+		ans *= n - i;
+		ans /= i + 1;
+	}
+	return ans;
+};
