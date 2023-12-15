@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Calculates the length of the longest common child string between two given
 	 * strings.
-	 * 
+	 *
 	 * @param s1 The first string.
 	 * @param s2 The second string.
 	 * @return The length of the longest common child string.

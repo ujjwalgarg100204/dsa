@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Calculates the minimum number of terms required to form a sum equal to 'n'
 	 * using multiples of 'k'.
-	 * 
+	 *
 	 * @param n The target sum.
 	 * @param k The multiple to be used.
 	 * @return The minimum number of terms required. Returns -1 if it is not

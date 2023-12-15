@@ -3,10 +3,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Calculates the maximum number of occurrences of a pattern in a text by adding
 	 * each character of the pattern at all positions in the text.
-	 * 
+	 *
 	 * @param text    the input text
 	 * @param pattern the pattern to be added and checked for occurrences
 	 * @return the maximum number of occurrences of the pattern in the text
@@ -22,7 +23,8 @@ public class Main {
 
 				// generate all subsequences and check count of pattern in it
 				List<String> subsequences = getSubsequences(newText.toString());
-				maxCount = Math.max(maxCount, countOccurrences(subsequences, pattern));
+				maxCount =
+					Math.max(maxCount, countOccurrences(subsequences, pattern));
 			}
 		}
 
@@ -61,7 +63,10 @@ public class Main {
 	 * @param pattern      the pattern to count occurrences of
 	 * @return the number of occurrences of the pattern in the subsequences
 	 */
-	public static int countOccurrences(List<String> subsequences, String pattern) {
+	public static int countOccurrences(
+		List<String> subsequences,
+		String pattern
+	) {
 		int count = 0;
 		for (String subsequence : subsequences) {
 			if (subsequence.equals(pattern)) {

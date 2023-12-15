@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
  * Represents an element in an array.
  */
 class ArrayElement {
+
 	int index;
 	int value;
 
@@ -56,9 +57,10 @@ class ArrayElement {
 }
 
 public class Main {
+
 	/**
 	 * Finds the two smallest elements in a given list of integers.
-	 * 
+	 *
 	 * @param arr the list of integers
 	 * @return a list containing the two smallest elements as ArrayElement objects
 	 */
@@ -86,17 +88,21 @@ public class Main {
 	/**
 	 * Calculates the minimum number of steps required to reach the target sweetness
 	 * level.
-	 * 
+	 *
 	 * @param targetSweetness The target sweetness level to achieve.
 	 * @param candySweetness  The list of candy sweetness levels.
 	 * @return The minimum number of steps required.
 	 */
-	public static int solution(int targetSweetness, List<Integer> candySweetness) {
+	public static int solution(
+		int targetSweetness,
+		List<Integer> candySweetness
+	) {
 		List<ArrayElement> minElements = leastTwoElements(candySweetness);
 		int steps = 0;
 
 		while (minElements.get(0).value < targetSweetness) {
-			int newSweetness = minElements.get(0).value + 2 * minElements.get(1).value;
+			int newSweetness =
+				minElements.get(0).value + 2 * minElements.get(1).value;
 
 			// delete least two sweetness
 			candySweetness.remove(minElements.get(0).index);
@@ -119,10 +125,11 @@ public class Main {
 
 		int targetSweetness = scanner.nextInt();
 		scanner.nextLine();
-		List<Integer> candySweetness = Arrays.stream(scanner.nextLine().split(" "))
-				.mapToInt(Integer::parseInt)
-				.boxed()
-				.collect(Collectors.toList());
+		List<Integer> candySweetness = Arrays
+			.stream(scanner.nextLine().split(" "))
+			.mapToInt(Integer::parseInt)
+			.boxed()
+			.collect(Collectors.toList());
 
 		System.out.println(solution(targetSweetness, candySweetness));
 

@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+
 	public static int[] solution(int[] numbers) {
 		// Sort the numbers first
 		Arrays.sort(numbers);

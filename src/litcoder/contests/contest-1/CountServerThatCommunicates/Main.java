@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 class DS {
+
 	int[] size;
 	int[] parent;
 
@@ -13,8 +14,7 @@ class DS {
 	}
 
 	public int findPar(int n) {
-		if (parent[n] == n)
-			return n;
+		if (parent[n] == n) return n;
 		parent[n] = findPar(parent[n]);
 		return parent[n];
 	}
@@ -37,6 +37,7 @@ class DS {
 }
 
 public class Main {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
@@ -63,8 +64,7 @@ public class Main {
 		}
 		int ans = 0;
 		for (int i = 0; i < ds.parent.length; i++) {
-			if (ds.parent[i] == i && ds.size[i] > 1)
-				ans += ds.size[i];
+			if (ds.parent[i] == i && ds.size[i] > 1) ans += ds.size[i];
 		}
 		return ans;
 	}

@@ -4,14 +4,21 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int noOfJobs = sc.nextInt();
 		sc.nextLine();
 
 		String[] jobNames = sc.nextLine().split(" ");
-		int[] deadlines = Arrays.stream(sc.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-		int[] profits = Arrays.stream(sc.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+		int[] deadlines = Arrays
+			.stream(sc.nextLine().split(" "))
+			.mapToInt(Integer::parseInt)
+			.toArray();
+		int[] profits = Arrays
+			.stream(sc.nextLine().split(" "))
+			.mapToInt(Integer::parseInt)
+			.toArray();
 		sc.close();
 
 		ArrayList<Job> arr = new ArrayList<>();
@@ -33,8 +40,7 @@ class Job {
 	int profit;
 
 	// Constructors
-	public Job() {
-	}
+	public Job() {}
 
 	public Job(String id, int deadline, int profit) {
 		this.id = id;
@@ -50,8 +56,7 @@ class Job {
 
 		// Sort all jobs according to decreasing order of
 		// profit
-		Collections.sort(arr,
-				(a, b) -> b.profit - a.profit);
+		Collections.sort(arr, (a, b) -> b.profit - a.profit);
 
 		// To keep track of free time slots
 		boolean[] result = new boolean[t];
@@ -63,7 +68,11 @@ class Job {
 		for (int i = 0; i < n; i++) {
 			// Find a free slot for this job (Note that we
 			// start from the last possible slot)
-			for (int j = Math.min(t - 1, arr.get(i).deadline - 1); j >= 0; j--) {
+			for (
+				int j = Math.min(t - 1, arr.get(i).deadline - 1);
+				j >= 0;
+				j--
+			) {
 				// Free slot found
 				if (!result[j]) {
 					result[j] = true;
@@ -74,8 +83,7 @@ class Job {
 		}
 
 		// Print the sequence
-		for (String jb : job)
-			System.out.print(jb + " ");
+		for (String jb : job) System.out.print(jb + " ");
 		System.out.println();
 	}
 }

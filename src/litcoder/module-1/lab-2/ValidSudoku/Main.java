@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int boardDimension = Integer.parseInt(sc.nextLine());
@@ -26,6 +27,7 @@ public class Main {
  * Represents a Sudoku board.
  */
 class SudokuBoard {
+
 	private static final int SUDOKU_BOARD_DIMENSION = 9;
 	private String[][] board;
 
@@ -35,7 +37,7 @@ class SudokuBoard {
 
 	/**
 	 * Checks if the Sudoku board is valid.
-	 * 
+	 *
 	 * @return true if the Sudoku board is valid, false otherwise.
 	 */
 	public boolean isValid() {
@@ -105,7 +107,6 @@ class SudokuBoard {
 			centerRow = 1;
 		} else if (row <= 5) {
 			centerRow = 4;
-
 		} else {
 			centerRow = 7;
 		}
@@ -120,7 +121,6 @@ class SudokuBoard {
 		}
 
 		return new int[] { centerRow, centerCol };
-
 	}
 
 	/**

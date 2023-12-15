@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Calculates the recursive digit sum of a given number after repeating it a
 	 * certain number of times.
-	 * 
+	 *
 	 * @param number The input number as a string.
 	 * @param reps   The number of times the input number should be repeated.
 	 * @return The recursive digit sum of the repeated number.

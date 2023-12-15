@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Calculates the Egyptian fraction representation of a given fraction.
 	 * An Egyptian fraction is a sum of distinct unit fractions, where a unit

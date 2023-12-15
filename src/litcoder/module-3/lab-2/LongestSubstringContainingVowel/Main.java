@@ -3,6 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+
 	public static int solution(String string) {
 		int longestSubstringLength = 0;
 
@@ -10,7 +11,9 @@ public class Main {
 		for (int i = 0; i < string.length(); i++) {
 			for (int j = i; j < string.length(); j++) {
 				// get count of vowels in the current substring
-				Map<Character, Integer> vowelCount = countVowels(string.substring(i, j + 1));
+				Map<Character, Integer> vowelCount = countVowels(
+					string.substring(i, j + 1)
+				);
 
 				// check if all counts are even
 				boolean allEven = true;
@@ -25,7 +28,8 @@ public class Main {
 				}
 
 				// update length of longestSubstringLength
-				longestSubstringLength = Math.max(longestSubstringLength, j + 1 - i);
+				longestSubstringLength =
+					Math.max(longestSubstringLength, j + 1 - i);
 			}
 		}
 

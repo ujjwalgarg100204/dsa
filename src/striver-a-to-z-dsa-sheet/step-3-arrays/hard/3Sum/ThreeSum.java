@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class ThreeSum {
+
 	public static List<List<Integer>> brute(int[] arr) {
 		Set<List<Integer>> set = new HashSet<>();
 
@@ -18,7 +19,9 @@ public class ThreeSum {
 						continue;
 					}
 
-					List<Integer> triplet = new ArrayList<>(List.of(arr[i], arr[j], arr[k]));
+					List<Integer> triplet = new ArrayList<>(
+						List.of(arr[i], arr[j], arr[k])
+					);
 					triplet.sort(Integer::compare);
 					set.add(triplet);
 				}
@@ -46,8 +49,7 @@ public class ThreeSum {
 			final int reqSum = -1 * arr[i];
 			// find rest of two numbers
 			for (int j = 0; j < arr.length; j++) {
-				if (i == j)
-					continue;
+				if (i == j) continue;
 
 				// decrement count of arr[j] in map
 				addToValue(map, arr[j], -1);
@@ -55,7 +57,9 @@ public class ThreeSum {
 				int thirdNum = reqSum - arr[j];
 				// if third num exists and its count is > 0
 				if (map.containsKey(thirdNum) && map.get(thirdNum) > 0) {
-					List<Integer> triplet = new ArrayList<>(List.of(arr[i], arr[j], thirdNum));
+					List<Integer> triplet = new ArrayList<>(
+						List.of(arr[i], arr[j], thirdNum)
+					);
 					triplet.sort(Integer::compare);
 					set.add(triplet);
 				}
@@ -70,7 +74,11 @@ public class ThreeSum {
 		return new ArrayList<>(set);
 	}
 
-	public static void addToValue(Map<Integer, Integer> map, int key, int toAdd) {
+	public static void addToValue(
+		Map<Integer, Integer> map,
+		int key,
+		int toAdd
+	) {
 		map.replace(key, map.get(key) + toAdd);
 	}
 
@@ -82,7 +90,9 @@ public class ThreeSum {
 			for (int j = i + 1; j < arr.length; j++) {
 				int thirdDig = -1 * (arr[i] + arr[j]);
 				if (set.contains(thirdDig)) {
-					List<Integer> triplet = new ArrayList<>(List.of(arr[i], arr[j], thirdDig));
+					List<Integer> triplet = new ArrayList<>(
+						List.of(arr[i], arr[j], thirdDig)
+					);
 					triplet.sort(Integer::compare);
 					triplets.add(triplet);
 				}

@@ -1,8 +1,8 @@
 import { Solution, Test, TestCase } from "./types";
 
+import _ from "lodash";
 import chalk from "chalk";
 import { log } from "console";
-import _ from "lodash";
 
 class ManualTesting implements Test {
 	/**

@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 class Activity {
+
 	int startTime;
 	int endTime;
 
@@ -38,10 +39,11 @@ class Activity {
 }
 
 public class Main {
+
 	/**
 	 * Sorts the activities in ascending order according to their finishing time and
 	 * returns a list of activities in the order they can be performed.
-	 * 
+	 *
 	 * @param activities the list of activities to be sorted
 	 * @return a list of activities in the order they can be performed
 	 */
@@ -54,7 +56,9 @@ public class Main {
 
 		for (int i = 1; i < activities.size(); i++) {
 			Activity activity = activities.get(i);
-			if (activity.startTime >= actOrder.get(actOrder.size() - 1).endTime) {
+			if (
+				activity.startTime >= actOrder.get(actOrder.size() - 1).endTime
+			) {
 				actOrder.add(activity);
 			}
 		}

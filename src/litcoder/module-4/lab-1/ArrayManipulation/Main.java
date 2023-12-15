@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Calculates the maximum value in an array after performing a series of
 	 * queries.
-	 * 
+	 *
 	 * @param n       The size of the array.
 	 * @param queries The queries to be performed on the array.
 	 * @return The maximum value in the array after performing the queries.

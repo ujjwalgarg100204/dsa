@@ -6,16 +6,20 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Main {
+
 	/**
 	 * Calculates the index of the kth smallest trimmed number for each query.
-	 * 
+	 *
 	 * @param nums    The list of numbers.
 	 * @param queries The list of queries, where each query contains the value of k
 	 *                and the trim value.
 	 * @return The list of indices of the kth smallest trimmed number for each
 	 *         query.
 	 */
-	public static List<Integer> solution(List<String> nums, List<List<Integer>> queries) {
+	public static List<Integer> solution(
+		List<String> nums,
+		List<List<Integer>> queries
+	) {
 		List<Integer> ans = new ArrayList<>();
 
 		for (List<Integer> query : queries) {
@@ -33,7 +37,7 @@ public class Main {
 
 	/**
 	 * Trims the numbers in the given list to the specified length.
-	 * 
+	 *
 	 * @param nums    the list of numbers to be trimmed
 	 * @param trimLen the length to which the numbers should be trimmed
 	 * @return a new list containing the trimmed numbers
@@ -73,14 +77,21 @@ public class Main {
 			intMappedArr.add(Integer.parseInt(str));
 		}
 
-		int num = intMappedArr.stream().sorted().skip(k - 1).findFirst().orElseThrow();
+		int num = intMappedArr
+			.stream()
+			.sorted()
+			.skip(k - 1)
+			.findFirst()
+			.orElseThrow();
 		return intMappedArr.indexOf(num);
 	}
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		List<String> nums = Arrays.stream(scanner.nextLine().split(" ")).collect(Collectors.toList());
+		List<String> nums = Arrays
+			.stream(scanner.nextLine().split(" "))
+			.collect(Collectors.toList());
 
 		int queryCount = scanner.nextInt();
 		List<List<Integer>> queries = new ArrayList<>();

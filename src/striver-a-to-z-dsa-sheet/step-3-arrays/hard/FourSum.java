@@ -5,16 +5,15 @@ import java.util.List;
 import java.util.Set;
 
 public class FourSum {
+
 	public static List<List<Integer>> better(int[] arr, int target) {
 		Arrays.sort(arr);
 		List<List<Integer>> choplets = new ArrayList<>();
 
 		for (int i = 0; i < arr.length; i++) {
-			if (i > 0 && arr[i] == arr[i - 1])
-				continue;
+			if (i > 0 && arr[i] == arr[i - 1]) continue;
 			for (int j = i + 1; j < arr.length; j++) {
-				if (j > i + 1 && arr[j] == arr[j - 1])
-					continue;
+				if (j > i + 1 && arr[j] == arr[j - 1]) continue;
 
 				int k = j + 1;
 				int l = arr.length - 1;
@@ -36,7 +35,6 @@ public class FourSum {
 						}
 					}
 				}
-
 			}
 		}
 
@@ -48,11 +46,9 @@ public class FourSum {
 		List<List<Integer>> choplets = new ArrayList<>();
 
 		for (int i = 0; i < arr.length; i++) {
-			if (i > 0 && arr[i] == arr[i - 1])
-				continue;
+			if (i > 0 && arr[i] == arr[i - 1]) continue;
 			for (int j = i + 1; j < arr.length; j++) {
-				if (j > i + 1 && arr[j] == arr[j - 1])
-					continue;
+				if (j > i + 1 && arr[j] == arr[j - 1]) continue;
 
 				int k = j + 1;
 				int l = arr.length - 1;
@@ -74,7 +70,6 @@ public class FourSum {
 						}
 					}
 				}
-
 			}
 		}
 
@@ -90,7 +85,9 @@ public class FourSum {
 					for (int l = k + 1; l < arr.length; l++) {
 						int sum = arr[i] + arr[j] + arr[k] + arr[l];
 						if (sum == target) {
-							List<Integer> choplet = new ArrayList<>(List.of(arr[i], arr[k], arr[j], arr[l]));
+							List<Integer> choplet = new ArrayList<>(
+								List.of(arr[i], arr[k], arr[j], arr[l])
+							);
 							choplet.sort(Integer::compare);
 							choplets.add(choplet);
 						}

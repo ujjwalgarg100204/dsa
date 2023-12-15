@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Calculates the clumsy factorial of a given number.
-	 * 
+	 *
 	 * @param n The number for which the clumsy factorial is to be calculated.
 	 * @return The clumsy factorial of the given number.
 	 */

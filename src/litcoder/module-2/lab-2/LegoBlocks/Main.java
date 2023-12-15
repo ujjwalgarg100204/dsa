@@ -3,11 +3,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
 	private static final int MODULO = 1000000007;
 
 	/**
 	 * Calculates the number of solid layouts for a given height and width.
-	 * 
+	 *
 	 * @param height The number of rows in the layout.
 	 * @param width  The number of columns in the layout.
 	 * @return The number of solid layouts.
@@ -16,7 +17,12 @@ public class Main {
 		// step 1: no of layouts in a single row
 		int[] layouts = { 0, 1, 2, 4, 8 };
 		for (int w = 5; w <= width; w++) {
-			layouts[w] = (layouts[w - 1] + layouts[w - 2] + layouts[w - 3] + layouts[w - 4]) % MODULO;
+			layouts[w] =
+				(layouts[w - 1] +
+					layouts[w - 2] +
+					layouts[w - 3] +
+					layouts[w - 4]) %
+				MODULO;
 		}
 
 		// step 2: total no of layouts in H rows
@@ -35,7 +41,11 @@ public class Main {
 		for (int w = 2; w <= width; w++) {
 			int unsolidSum = 0;
 			for (int i = 1; i < w; i++) {
-				unsolidSum = (unsolidSum + (totalLayouts[i] * solidLayouts.get(w - i)) % MODULO) % MODULO;
+				unsolidSum =
+					(unsolidSum +
+						((totalLayouts[i] * solidLayouts.get(w - i)) %
+							MODULO)) %
+					MODULO;
 			}
 			solidLayouts.add((totalLayouts[w] - unsolidSum) % MODULO);
 		}

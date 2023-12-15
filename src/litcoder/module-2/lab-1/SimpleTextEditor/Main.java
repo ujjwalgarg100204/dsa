@@ -3,6 +3,7 @@ import java.util.Deque;
 import java.util.Scanner;
 
 public class Main {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
@@ -16,9 +17,10 @@ public class Main {
 				editor.insert(commands[i + 1]);
 			} else if (commands[i].equals("2")) {
 				editor.delete(Integer.parseInt(commands[i + 1]));
-
 			} else if (commands[i].equals("3")) {
-				System.out.println(editor.get(Integer.parseInt(commands[i + 1])));
+				System.out.println(
+					editor.get(Integer.parseInt(commands[i + 1]))
+				);
 			} else {
 				editor.undo();
 				increment = 1;
@@ -28,7 +30,6 @@ public class Main {
 
 		sc.close();
 	}
-
 }
 
 /**
@@ -38,6 +39,7 @@ public class Main {
  * of strings.
  */
 class CustomStack {
+
 	private Deque<String> editor;
 	private Deque<String> temp;
 
@@ -59,7 +61,7 @@ class CustomStack {
 	 * Deletes a specified number of characters from the editor.
 	 * If the count exceeds the length of the current top editor string, it will
 	 * delete the entire string.
-	 * 
+	 *
 	 * @param count The number of characters to delete.
 	 */
 	public void delete(int count) {

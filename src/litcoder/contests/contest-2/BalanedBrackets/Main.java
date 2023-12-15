@@ -3,9 +3,10 @@ import java.util.Deque;
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Checks if the given expression has balanced brackets.
-	 * 
+	 *
 	 * @param exp the expression to be checked
 	 * @return true if the brackets are balanced, false otherwise
 	 */
@@ -15,9 +16,11 @@ public class Main {
 		for (char c : exp.toCharArray()) {
 			if (stack.isEmpty()) {
 				stack.push(c);
-			} else if ((stack.peek() == '(' && c == ')') ||
-					(stack.peek() == '{' && c == '}') ||
-					(stack.peek() == '[' && c == ']')) {
+			} else if (
+				(stack.peek() == '(' && c == ')') ||
+				(stack.peek() == '{' && c == '}') ||
+				(stack.peek() == '[' && c == ']')
+			) {
 				stack.pop();
 			} else {
 				stack.push(c);

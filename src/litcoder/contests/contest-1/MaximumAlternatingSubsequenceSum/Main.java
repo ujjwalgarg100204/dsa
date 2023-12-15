@@ -3,10 +3,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
 	/**
 	 * Calculates the maximum alternating subsequence sum from the given list of
 	 * integers.
-	 * 
+	 *
 	 * @param arr The list of integers
 	 * @return The maximum alternating subsequence sum
 	 */
@@ -36,7 +37,11 @@ public class Main {
 		if (arr.isEmpty()) {
 			return 0;
 		}
-		return arr.stream().filter(i -> arr.indexOf(i) % 2 == 0).mapToInt(Integer::intValue).sum();
+		return arr
+			.stream()
+			.filter(i -> arr.indexOf(i) % 2 == 0)
+			.mapToInt(Integer::intValue)
+			.sum();
 	}
 
 	/**
@@ -49,7 +54,11 @@ public class Main {
 		if (arr.isEmpty()) {
 			return 0;
 		}
-		return arr.stream().filter(i -> arr.indexOf(i) % 2 != 0).mapToInt(Integer::intValue).sum();
+		return arr
+			.stream()
+			.filter(i -> arr.indexOf(i) % 2 != 0)
+			.mapToInt(Integer::intValue)
+			.sum();
 	}
 
 	/**
@@ -62,7 +71,12 @@ public class Main {
 	 * @param currSeq the current subsequence being generated
 	 * @param result  the list to store the generated subsequences
 	 */
-	public static void getSubsequences(List<Integer> arr, int start, List<Integer> currSeq, List<List<Integer>> result) {
+	public static void getSubsequences(
+		List<Integer> arr,
+		int start,
+		List<Integer> currSeq,
+		List<List<Integer>> result
+	) {
 		result.add(new ArrayList<>(currSeq));
 
 		for (int i = start; i < arr.size(); i++) {

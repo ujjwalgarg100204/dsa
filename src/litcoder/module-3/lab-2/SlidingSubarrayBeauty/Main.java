@@ -3,10 +3,14 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Main {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		int[] arr = Arrays.stream(sc.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+		int[] arr = Arrays
+			.stream(sc.nextLine().split(" "))
+			.mapToInt(Integer::parseInt)
+			.toArray();
 		int subArrSize = sc.nextInt();
 		int k = sc.nextInt();
 
@@ -20,7 +24,7 @@ public class Main {
 
 	/**
 	 * Calculates the beauty of each subarray in the given array.
-	 * 
+	 *
 	 * @param arr        the input array
 	 * @param subArrSize the size of each subarray
 	 * @param k          the position of the smallest element in each subarray

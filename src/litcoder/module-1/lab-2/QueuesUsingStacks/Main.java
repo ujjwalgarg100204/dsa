@@ -4,11 +4,15 @@ import java.util.Deque;
 import java.util.Scanner;
 
 public class Main {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Queue q = new Queue();
 
-		int[] inputs = Arrays.stream(sc.nextLine().split("[ ,]")).mapToInt(Integer::parseInt).toArray();
+		int[] inputs = Arrays
+			.stream(sc.nextLine().split("[ ,]"))
+			.mapToInt(Integer::parseInt)
+			.toArray();
 		int i = 0;
 		while (i < inputs.length) {
 			if (inputs[i] == 1) {
@@ -31,6 +35,7 @@ public class Main {
  * A Queue implementation using two Stacks.
  */
 class Queue {
+
 	private Deque<Integer> mainStack;
 	private Deque<Integer> tempStack;
 
@@ -41,7 +46,7 @@ class Queue {
 
 	/**
 	 * Adds an element to the queue.
-	 * 
+	 *
 	 * @param num the element to be added
 	 */
 	public void enqueue(int num) {
@@ -88,7 +93,7 @@ class Queue {
 
 	/**
 	 * Switches the elements from one stack to another.
-	 * 
+	 *
 	 * @param from the stack from which elements are to be switched
 	 * @param to   the stack to which elements are to be switched
 	 */
