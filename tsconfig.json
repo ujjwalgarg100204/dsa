@@ -20,7 +20,7 @@
 		],
 		"paths": {
 			"@utils/*": ["./src/main/typescript/utils/*"],
-			"@testing/*":  ["./src/test/typescript/*"],
+			"@testing/*": ["./src/test/typescript/*"],
 			"@/*": ["./src/main/typescript/*"]
 		}
 	}

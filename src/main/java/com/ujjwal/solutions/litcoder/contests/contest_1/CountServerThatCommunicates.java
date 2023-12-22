@@ -3,6 +3,7 @@ package com.ujjwal.solutions.litcoder.contests.contest_1;
 import java.util.Scanner;
 
 class DS {
+
 	int[] size;
 	int[] parent;
 

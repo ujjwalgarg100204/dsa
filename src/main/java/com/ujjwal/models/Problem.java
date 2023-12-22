@@ -5,26 +5,26 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Problem<Input, Output extends Comparable<Output>>{
-    public abstract
-    String getName();
+public abstract class Problem<Input, Output extends Comparable<Output>> {
 
-    public abstract String getProblemLink();
+	public abstract String getName();
 
-    public abstract List<TestCase<Input, Output>> getTestCases();
+	public abstract String getProblemLink();
 
-    public List<Method> getImplementations() {
-        List<Method> implementations = new ArrayList<>();
+	public abstract List<TestCase<Input, Output>> getTestCases();
 
-        // get all methods from the class
-        Method[] methods = getClass().getDeclaredMethods();
+	public List<Method> getImplementations() {
+		List<Method> implementations = new ArrayList<>();
 
-        for (Method method: methods) {
-            if (method.isAnnotationPresent(Solution.class)) {
-                implementations.add(method);
-            }
-        }
+		// get all methods from the class
+		Method[] methods = getClass().getDeclaredMethods();
 
-        return implementations;
-    }
+		for (Method method : methods) {
+			if (method.isAnnotationPresent(Solution.class)) {
+				implementations.add(method);
+			}
+		}
+
+		return implementations;
+	}
 }
