@@ -18,10 +18,10 @@
 		"types": [
 			"bun-types" // add Bun global
 		],
-		"baseUrl": "./src",
 		"paths": {
-			"@utils/*": ["./utils/*"],
-			"@/*": ["./*"]
+			"@utils/*": ["./src/main/typescript/utils/*"],
+			"@testing/*":  ["./src/test/typescript/*"],
+			"@/*": ["./src/main/typescript/*"]
 		}
 	}
 }
