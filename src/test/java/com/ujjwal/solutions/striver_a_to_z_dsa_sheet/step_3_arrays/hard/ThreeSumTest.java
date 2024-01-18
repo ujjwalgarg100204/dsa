@@ -1,7 +1,6 @@
-package striver_a_to_z_dsa_sheet.step_3_arrays.hard;
+package com.ujjwal.solutions.striver_a_to_z_dsa_sheet.step_3_arrays.hard;
 
 import com.ujjwal.models.TestCase;
-import com.ujjwal.solutions.striver_a_to_z_dsa_sheet.step_3_arrays.hard.ThreeSum;
 import org.junit.jupiter.api.*;
 
 import java.lang.reflect.Method;

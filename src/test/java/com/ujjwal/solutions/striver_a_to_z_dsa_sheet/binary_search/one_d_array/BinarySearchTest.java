@@ -1,4 +1,4 @@
-package striver_a_to_z_dsa_sheet.binary_search.bs_on_1d_array;
+package com.ujjwal.solutions.striver_a_to_z_dsa_sheet.binary_search.one_d_array;
 
 import com.ujjwal.models.TestCase;
 import com.ujjwal.solutions.striver_a_to_z_dsa_sheet.binary_search.one_d_array.BinarySearch.BinarySearch;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BinarySearchTest {
     private BinarySearch binarySearch;
