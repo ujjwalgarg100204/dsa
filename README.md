@@ -130,12 +130,10 @@ If you want to build a similar repo, you can use setup the project as follows
 
 - Create a file under the `solutions` folder in `java` folder for your problem
     - Convention: Problem name in Pascal Case
-- Extend the `abstract class Problem` and implement all abstract methods
-- Annotate your current problem with `@CurrentlySolving`, this helps in testing the problem as it looks for all the
-  classes annotated with the aforementioned annotation
-- Create a implementation of your solutions and annotate them with `@Solution` annotation so they get picked up and
+- Extend the `abstract class DSAProblem<Input, Output>` and implement all abstract methods
+- Create an implementation of your solutions and annotate them with `@Solution` annotation, so they get picked up and
   tested against all the test-cases
-- Run test method of `TestProblems.java` and see your code get tested
+- Create a test file for your problem in test package and run them
 
 ### Typescript
 
