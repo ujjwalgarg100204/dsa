@@ -22,6 +22,7 @@ public class DLNode<T> {
 
     @Override
     public String toString() {
-        return "DLNode [data=" + data + ", next=" + next.data + ", prev=" + prev.data + "]";
+        return "DLNode [data=" + data + ", next=" + (next == null ? null : next.hashCode()) + ", prev="
+                + (prev == null ? null : prev.hashCode()) + "]";
     }
 }
