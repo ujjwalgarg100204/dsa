@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Set;
 
 import com.ujjwal.annotations.Solution;
+import com.ujjwal.datastructures.linkedlist.SLNode;
+import com.ujjwal.datastructures.linkedlist.SinglyLinkedList;
 import com.ujjwal.models.DSAProblem;
 import com.ujjwal.models.TestCase;
-import com.ujjwal.solutions.striver_a_to_z_dsa_sheet.datastructures.linkedlist.SLNode;
-import com.ujjwal.solutions.striver_a_to_z_dsa_sheet.datastructures.linkedlist.SinglyLinkedList;
 
 /**
  * DetectLoopInLL

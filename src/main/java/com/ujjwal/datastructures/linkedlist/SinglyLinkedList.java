@@ -1,4 +1,4 @@
-package com.ujjwal.solutions.striver_a_to_z_dsa_sheet.datastructures.linkedlist;
+package com.ujjwal.datastructures.linkedlist;
 
 import java.util.Iterator;
 

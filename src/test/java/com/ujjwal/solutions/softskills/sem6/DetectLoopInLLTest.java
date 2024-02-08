@@ -13,8 +13,8 @@ import org.junit.jupiter.api.DynamicContainer;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 
+import com.ujjwal.datastructures.linkedlist.SLNode;
 import com.ujjwal.models.TestCase;
-import com.ujjwal.solutions.striver_a_to_z_dsa_sheet.datastructures.linkedlist.SLNode;
 
 /**
  * DetectLoopInLLTest
