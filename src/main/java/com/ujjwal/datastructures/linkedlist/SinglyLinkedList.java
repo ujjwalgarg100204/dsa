@@ -13,17 +13,13 @@ public class SinglyLinkedList {
             return null;
 
         SLNode<T> head = new SLNode<>(iterator.next());
-        if (!iterator.hasNext())
-            return head;
 
         // create tail pointer for easy addition ll
-        SLNode<T> tail = new SLNode<>(iterator.next());
-
-        // set head's next ptr to its tail
-        head.next = tail;
+        SLNode<T> tail = head;
 
         while (iterator.hasNext()) {
             tail.next = new SLNode<>(iterator.next());
+            tail = tail.next;
         }
 
         return head;
@@ -64,5 +60,23 @@ public class SinglyLinkedList {
         }
         sb.append("null");
         return sb.toString();
+    }
+
+    public static <T extends Comparable<T>> int compare(SLNode<T> head1, SLNode<T> head2) {
+        SLNode<T> temp1 = head1, temp2 = head2;
+
+        while (temp1 != null && temp2 != null) {
+            if (temp1.data.compareTo(temp2.data) != 0) {
+                return temp1.data.compareTo(temp2.data);
+            }
+            temp1 = temp1.next;
+            temp2 = temp2.next;
+        }
+
+        if (temp1 != null || temp2 != null) {
+            return temp1 != null ? 1 : -1;
+        }
+
+        return 0;
     }
 }
