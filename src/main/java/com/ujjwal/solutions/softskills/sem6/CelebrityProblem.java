@@ -57,7 +57,7 @@ public class CelebrityProblem extends DSAProblem<int[][], Integer> {
                 continue;
             }
 
-            // if he doesn't know anybody and no body knows him, then he is celebrity
+            // if he doesn't know anybody and everybody body knows him, then he is celebrity
             // check if everybody knows him
             boolean isCelebrity = true;
             for (int j = 0; j < mat.length; j++) {
