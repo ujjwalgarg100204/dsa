@@ -1,18 +1,18 @@
 package com.ujjwal.solutions.striver_a_to_z_dsa_sheet.step_3_arrays.hard;
 
-import com.ujjwal.models.TestCase;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DynamicContainer;
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.TestFactory;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DynamicContainer;
+import org.junit.jupiter.api.TestFactory;
+
+import com.ujjwal.models.TestCase;
+import com.ujjwal.solutions.DSATest;
 
 class MergeIntervalsTest {
     private MergeIntervals problem;
@@ -23,26 +23,19 @@ class MergeIntervalsTest {
     }
 
     @TestFactory
-    Collection<DynamicContainer> testing() {
-        Collection<DynamicContainer> testContainers = new ArrayList<>();
+    @DisplayName("Merge Intervals")
+    List<DynamicContainer> testingProblem() {
+        return DSATest.generateTestContainers(
+                problem,
+                testCase -> Arrays.deepToString(testCase.input()),
+                pair -> {
+                    Method solution = pair.getFirst();
+                    TestCase<int[][], int[][]> testCase = pair.getSec();
+                    return () -> assertTrue(Arrays.deepEquals(
+                            testCase.expectedOutput(),
+                            (int[][]) solution.invoke(problem, (Object) testCase.input())));
+                }
 
-        for (Method solution : problem.getSolutions()) {
-            // create tests for solution against all testCases
-            List<DynamicTest> tests = new ArrayList<>();
-            for (TestCase<int[][], int[][]> testCase : problem.getTestCases()) {
-                tests.add(DynamicTest.dynamicTest(
-                        Arrays.deepToString(testCase.input()),
-                        () -> assertTrue(Arrays.deepEquals(
-                                testCase.expectedOutput(),
-                                (int[][]) solution.invoke(problem, (Object) testCase.input())
-                        ))
-                ));
-            }
-
-            testContainers.add(DynamicContainer.dynamicContainer(solution.getName(), tests));
-        }
-
-        return testContainers;
+        );
     }
-
 }

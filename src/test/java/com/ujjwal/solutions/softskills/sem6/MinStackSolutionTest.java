@@ -1,75 +1,58 @@
 package com.ujjwal.solutions.softskills.sem6;
 
-import java.util.ArrayList;
-import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.TestFactory;
+import org.junit.jupiter.api.Test;
 
-import com.ujjwal.models.TestCase;
-import com.ujjwal.solutions.softskills.sem6.MinStack.MinStackInput;
-import com.ujjwal.solutions.softskills.sem6.MinStack.MinStackSolution;
+import com.ujjwal.solutions.softskills.sem6.MinStack.MinStack;
+import com.ujjwal.solutions.softskills.sem6.MinStack.MinStackBruteImplementation;
 
 /**
  * MinStackSolutionTest
  */
 public class MinStackSolutionTest {
 
-    private MinStackSolution implementation;
+    private MinStack problem;
 
     @BeforeEach
     void setupStack() {
-        implementation = new MinStackSolution();
+        problem = new MinStackBruteImplementation();
     }
 
-    List<Integer> testMinStack(MinStackInput input) {
-        List<Integer> result = new ArrayList<>();
-
-        List<String> operations = input.operations();
-        List<List<Integer>> values = input.values();
-
-        for (int i = 0; i < operations.size(); i++) {
-            switch (operations.get(i)) {
-                case "push":
-                    values.get(i).forEach(implementation::push);
-                    result.add(null);
-                    break;
-                case "pop":
-                    implementation.pop();
-                    result.add(null);
-                    break;
-                case "top":
-                    result.add(implementation.top());
-                    break;
-                case "getMin":
-                    result.add(implementation.getMin());
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        return result;
+    @Test
+    public void testPushAndTop() {
+        problem.push(5);
+        assertEquals(5, problem.top());
+        problem.push(3);
+        assertEquals(3, problem.top());
+        problem.push(7);
+        assertEquals(7, problem.top());
     }
 
-    @TestFactory
-    @DisplayName("Testing MinStackSolution")
-    List<DynamicTest> testingMinstackSolution() {
-        List<DynamicTest> tests = new ArrayList<>();
+    @Test
+    public void testPop() {
+        problem.push(5);
+        problem.push(3);
+        problem.push(7);
+        problem.pop();
+        assertEquals(3, problem.top());
+        problem.pop();
+        assertEquals(5, problem.top());
+        problem.pop();
+    }
 
-        for (TestCase<MinStackInput, List<Integer>> testCase : implementation.getTestCases()) {
-            tests.add(DynamicTest.dynamicTest(
-                    testCase.toString(),
-                    () -> {
-                        List<Integer> results = testMinStack(testCase.input());
-                        System.out.println(results);
-                        Assertions.assertIterableEquals(results, testCase.expectedOutput());
-                    }));
-        }
-
-        return tests;
+    @Test
+    public void testGetMin() {
+        problem.push(5);
+        assertEquals(5, problem.getMin());
+        problem.push(3);
+        assertEquals(3, problem.getMin());
+        problem.push(7);
+        assertEquals(3, problem.getMin());
+        problem.pop();
+        assertEquals(3, problem.getMin());
+        problem.pop();
+        assertEquals(5, problem.getMin());
     }
 }
