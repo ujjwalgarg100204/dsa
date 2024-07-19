@@ -4,35 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "4f0c8fd068f6b737",
+        "id": "09915855a9374998",
         "type": "tabs",
         "children": [
           {
-            "id": "a651874913656de0",
+            "id": "7aee21dc9378094c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/12 Rotate Matrix by 90 Degrees.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "078719c2d5d110e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "13 Print The Matrix in Spiral Manner.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "13 Print The Matrix in Spiral Manner.md",
+                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +98,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "13 Print The Matrix in Spiral Manner.md",
+                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +121,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "13 Print The Matrix in Spiral Manner.md"
+                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md"
               }
             }
           }
@@ -159,10 +142,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "078719c2d5d110e5",
+  "active": "d6d1b88f9519b15b",
   "lastOpenFiles": [
     "Striver A to Z DSA Sheet/03 Arrays/medium/12 Rotate Matrix by 90 Degrees.md",
-    "13 Print The Matrix in Spiral Manner.md",
+    "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md",
     "Striver A to Z DSA Sheet/03 Arrays/medium/11 Set Matrix Zeroes.md",
     "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
     "Striver A to Z DSA Sheet/03 Arrays/medium/09 Leader in Array.md",
