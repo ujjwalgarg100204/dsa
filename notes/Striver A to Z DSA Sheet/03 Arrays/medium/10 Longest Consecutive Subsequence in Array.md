@@ -6,6 +6,7 @@ tags: []
 # Longest Consecutive Sub-Sequence in Array
 
 Problem Link: [LeetCode](https://leetcode.com/problems/longest-consecutive-sequence/solution/)
+Video Solution Link: [Striver](https://youtu.be/cHrH9CQ8pmY)
 
 ## Solutions
 

@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "3c89b06f27e18b7f",
+        "id": "4f0c8fd068f6b737",
         "type": "tabs",
         "children": [
           {
-            "id": "ef46511a5a0c5d0b",
+            "id": "a651874913656de0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,14 +138,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ef46511a5a0c5d0b",
+  "active": "a651874913656de0",
   "lastOpenFiles": [
+    "Striver A to Z DSA Sheet/03 Arrays/medium/11 Set Matrix Zeroes.md",
+    "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
+    "Striver A to Z DSA Sheet/03 Arrays/medium/09 Leader in Array.md",
     "College-STS/Sem-6/5. Min Stack.md~",
     "College-STS/Sem-6/1. Loop Detection In SLL.md~",
     "LeetCode/medium problems/Odd Even Linked List.md~",
     "College-STS/Sem-6/3. Segregate Even and Odds in LL.md~",
     "College-STS/Sem-6/4. Merge Sort for DLL.md~",
-    "College-STS/Sem-6/2. Sort Bitonic DLL.md~",
-    "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md"
+    "College-STS/Sem-6/2. Sort Bitonic DLL.md~"
   ]
 }
