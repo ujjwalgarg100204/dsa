@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LongestConsecutiveSubsequenceinArray {
+public class LongestConsecutiveSubSequenceInArray {
   public int optimal(int[] arr) {
     if (arr.length == 0) {
       return 0;
@@ -19,7 +19,7 @@ public class LongestConsecutiveSubsequenceinArray {
     for (int i : arr) {
       // check if current number forms a subsequence
       // we want to start from bottom of the subsequence so if i - 1
-      // exist then we can be sure that it aint the start of the subsequence
+      // exist then we can be sure that it ain't the start of the subsequence
       if (set.contains(i - 1)) {
         continue;
       }
