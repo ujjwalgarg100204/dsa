@@ -11,8 +11,12 @@
             "id": "c6c42b5d9952dac5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md"
+              }
             }
           }
         ]
@@ -138,8 +146,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d6d1b88f9519b15b",
+  "active": "c6c42b5d9952dac5",
   "lastOpenFiles": [
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array",
+    "Striver A to Z DSA Sheet/04 Binary Search",
     "Striver A to Z DSA Sheet/03 Arrays/medium/12 Rotate Matrix by 90 Degrees.md",
     "Striver A to Z DSA Sheet/03 Arrays/easy/12 Longest Subarray With Given Sum.md",
     "Striver A to Z DSA Sheet/03 Arrays/medium/14 Count Sub-arrays with Given Sum.md",

@@ -1,7 +1,8 @@
-package codes.striveratozdsasheet._04binarysearch._01_1darray;
-
-public class BinarySearch {
-
+- Problem Link: [LeetCode](https://leetcode.com/problems/binary-search/)
+- Video Solution Link: [Striver](https://youtu.be/MHf6awe89xw)
+## Solution
+### Iterative
+```java
   public int iterative(int[] arr, int target) {
     int low = 0;
     int high = arr.length - 1;
@@ -19,6 +20,9 @@ public class BinarySearch {
     return -1;
   }
 
+```
+### Recursive
+```java
   public int recursive(final int[] arr, int target, int low, int high) {
     if (low >= high) {
       return -1;
@@ -32,4 +36,4 @@ public class BinarySearch {
       return recursive(arr, target, mid + 1, high);
     }
   }
-}
+```
