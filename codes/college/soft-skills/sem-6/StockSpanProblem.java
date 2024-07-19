@@ -1,6 +1,0 @@
-/**
- * StockSpanProblem
- */
-public class StockSpanProblem {
-
-}

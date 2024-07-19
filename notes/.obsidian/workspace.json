@@ -1,0 +1,159 @@
+{
+  "main": {
+    "id": "b8b68ed354baa4fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "3c89b06f27e18b7f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ef46511a5a0c5d0b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e9f9f8d096d9a963",
+    "type": "split",
+    "children": [
+      {
+        "id": "0df102e98ad4f995",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d6d1b88f9519b15b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "431dbb3010c6f4e8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "42a8a190f6fdd37b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8b1e0225c0b67e6d",
+    "type": "split",
+    "children": [
+      {
+        "id": "a45c3609b5582bdb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc79074ae1c17cb4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3ae1bfd19dc5cf5a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a4a27b58bc87c19a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d7c8fcf6e578bef8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "ef46511a5a0c5d0b",
+  "lastOpenFiles": [
+    "College-STS/Sem-6/5. Min Stack.md~",
+    "College-STS/Sem-6/1. Loop Detection In SLL.md~",
+    "LeetCode/medium problems/Odd Even Linked List.md~",
+    "College-STS/Sem-6/3. Segregate Even and Odds in LL.md~",
+    "College-STS/Sem-6/4. Merge Sort for DLL.md~",
+    "College-STS/Sem-6/2. Sort Bitonic DLL.md~",
+    "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md"
+  ]
+}

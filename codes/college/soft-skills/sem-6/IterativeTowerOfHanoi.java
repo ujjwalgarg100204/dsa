@@ -1,6 +1,0 @@
-/**
- * IterativeTowerOfHanoi
- */
-public class IterativeTowerOfHanoi {
-
-}

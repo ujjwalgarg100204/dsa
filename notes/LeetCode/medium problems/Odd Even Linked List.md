@@ -7,15 +7,15 @@ Similar to problem: [[3. Segregate Even and Odds in LL]]
 ## Solution Optimal Code
 
 ```java
-public ListNode optimal(ListNode head) {
+public codes.college.softskills.sem6.ListNode optimal(codes.college.softskills.sem6.ListNode head) {
     // create odds and evens linked list
-    ListNode odds = new ListNode(Integer.MAX_VALUE);
-    ListNode oddsTail = odds;
-    ListNode evens = new ListNode(Integer.MAX_VALUE);
-    ListNode evensTail = evens;
+    codes.college.softskills.sem6.ListNode odds = new codes.college.softskills.sem6.ListNode(Integer.MAX_VALUE);
+    codes.college.softskills.sem6.ListNode oddsTail = odds;
+    codes.college.softskills.sem6.ListNode evens = new codes.college.softskills.sem6.ListNode(Integer.MAX_VALUE);
+    codes.college.softskills.sem6.ListNode evensTail = evens;
 
     boolean isEven = false;
-    for (ListNode i = head; i != null; i = i.next) {
+    for (codes.college.softskills.sem6.ListNode i = head; i != null; i = i.next) {
         if (isEven) {
             evensTail.next = i;
             evensTail = evensTail.next;
@@ -38,4 +38,3 @@ public ListNode optimal(ListNode head) {
     return odds.next;
 }
 ```
-
