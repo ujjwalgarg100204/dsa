@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "09915855a9374998",
+        "id": "5efdecebe5828d5b",
         "type": "tabs",
         "children": [
           {
-            "id": "7aee21dc9378094c",
+            "id": "c6c42b5d9952dac5",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -81,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -120,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -145,6 +141,8 @@
   "active": "d6d1b88f9519b15b",
   "lastOpenFiles": [
     "Striver A to Z DSA Sheet/03 Arrays/medium/12 Rotate Matrix by 90 Degrees.md",
+    "Striver A to Z DSA Sheet/03 Arrays/easy/12 Longest Subarray With Given Sum.md",
+    "Striver A to Z DSA Sheet/03 Arrays/medium/14 Count Sub-arrays with Given Sum.md",
     "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md",
     "Striver A to Z DSA Sheet/03 Arrays/medium/11 Set Matrix Zeroes.md",
     "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
