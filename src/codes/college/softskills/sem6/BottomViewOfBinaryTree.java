@@ -7,80 +7,81 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-class Node {
-    final int data;
-    Node left;
-    Node right;
-
-    public Node(final int data) {
-        this.data = data;
-    }
-
-}
-
-class Pair<T, V> {
-    final T first;
-    final V sec;
-
-    public Pair(T first, V sec) {
-        this.first = first;
-        this.sec = sec;
-    }
-
-}
 
 /**
  * BottomViewOfBinaryTree
  */
 public class BottomViewOfBinaryTree {
 
-    public List<Integer> solution(Node root) {
-        final Map<Integer, Integer> view = new TreeMap<>();
+  private static class Node {
 
-        Deque<Pair<Integer, Node>> q = new ArrayDeque<>();
-        q.offer(new Pair<>(0, root));
+    final int data;
+    Node left;
+    Node right;
 
-        while (!q.isEmpty()) {
-            Pair<Integer, Node> currPair = q.poll();
-            Node node = currPair.sec;
-            int col = currPair.first;
+    public Node(final int data) {
+      this.data = data;
+    }
+  }
 
-            view.put(col, node.data);
+  private static class Pair<T, V> {
 
-            if (node.left != null) {
-                q.offer(new Pair<>(col - 1, node.left));
-            }
-            if (node.right != null) {
-                q.offer(new Pair<>(col + 1, node.right));
-            }
+    final T first;
+    final V sec;
 
-        }
+    public Pair(T first, V sec) {
+      this.first = first;
+      this.sec = sec;
+    }
+  }
 
-        return new ArrayList<>(view.values());
+  public List<Integer> solution(Node root) {
+    final Map<Integer, Integer> view = new TreeMap<>();
+
+    Deque<Pair<Integer, Node>> q = new ArrayDeque<>();
+    q.offer(new Pair<>(0, root));
+
+    while (!q.isEmpty()) {
+      Pair<Integer, Node> currPair = q.poll();
+      Node node = currPair.sec;
+      int col = currPair.first;
+
+      view.put(col, node.data);
+
+      if (node.left != null) {
+        q.offer(new Pair<>(col - 1, node.left));
+      }
+      if (node.right != null) {
+        q.offer(new Pair<>(col + 1, node.right));
+      }
+
     }
 
-    public List<Integer> topView(Node root) {
-        final Map<Integer, Integer> view = new TreeMap<>();
+    return new ArrayList<>(view.values());
+  }
 
-        Deque<Pair<Integer, Node>> q = new ArrayDeque<>();
-        q.offer(new Pair<>(0, root));
+  public List<Integer> topView(Node root) {
+    final Map<Integer, Integer> view = new TreeMap<>();
 
-        while (!q.isEmpty()) {
-            Pair<Integer, Node> currPair = q.poll();
-            Node node = currPair.sec;
-            int col = currPair.first;
+    Deque<Pair<Integer, Node>> q = new ArrayDeque<>();
+    q.offer(new Pair<>(0, root));
 
-            view.putIfAbsent(col, node.data);
+    while (!q.isEmpty()) {
+      Pair<Integer, Node> currPair = q.poll();
+      Node node = currPair.sec;
+      int col = currPair.first;
 
-            if (node.left != null) {
-                q.offer(new Pair<>(col - 1, node.left));
-            }
-            if (node.right != null) {
-                q.offer(new Pair<>(col + 1, node.right));
-            }
+      view.putIfAbsent(col, node.data);
 
-        }
+      if (node.left != null) {
+        q.offer(new Pair<>(col - 1, node.left));
+      }
+      if (node.right != null) {
+        q.offer(new Pair<>(col + 1, node.right));
+      }
 
-        return new ArrayList<>(view.values());
     }
+
+    return new ArrayList<>(view.values());
+  }
 }
