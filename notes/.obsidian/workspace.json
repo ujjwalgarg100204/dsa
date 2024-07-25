@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5efdecebe5828d5b",
+        "id": "f4bb240b72781a6f",
         "type": "tabs",
         "children": [
           {
-            "id": "c6c42b5d9952dac5",
+            "id": "6b6199a09b3a89ca",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md",
+                "file": "Striver A to Z DSA Sheet/07 Recursion/02 Pow Function.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md",
+                "file": "Striver A to Z DSA Sheet/07 Recursion/02 Pow Function.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md",
+                "file": "Striver A to Z DSA Sheet/07 Recursion/02 Pow Function.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md"
+                "file": "Striver A to Z DSA Sheet/07 Recursion/02 Pow Function.md"
               }
             }
           }
@@ -146,9 +146,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c6c42b5d9952dac5",
+  "active": "d6d1b88f9519b15b",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Striver A to Z DSA Sheet/07 Recursion/02 Pow Function.md",
+    "Striver A to Z DSA Sheet/07 Recursion",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/12 Find Peak Element.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/11 Single Element in Sorted Array.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/09 Find Minimum in Sorted Rotated Array.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/10 Find Out How Many Times Array has been Rotated.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/08 Search in Rotated Array II.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/BS on Answers/01 Find Square Root of a Number in Log n.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/BS on Answers",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/07 Search in Rotated Array I.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/04 Search Insert Position.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/05 Find First and Last Position of Element in Sorted Array.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/06 Count Occurrence of Number in Sorted Array.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/02 Implement Lower Bound.md",
+    "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/03 Implement Upper Bound.md",
+    "02 Lower Bound.md",
+    "Striver A to Z DSA Sheet/03 Arrays/easy/04 Remove Duplicates from Array.md",
     "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/01 Binary Search.md",
+    "Striver A to Z DSA Sheet/03 Arrays/hard/01 Pascals Triangle.md",
+    "Striver A to Z DSA Sheet/03 Arrays/hard",
     "Striver A to Z DSA Sheet/04 Binary Search/1 D Array",
     "Striver A to Z DSA Sheet/04 Binary Search",
     "Striver A to Z DSA Sheet/03 Arrays/medium/12 Rotate Matrix by 90 Degrees.md",
@@ -162,7 +182,6 @@
     "College-STS/Sem-6/1. Loop Detection In SLL.md~",
     "LeetCode/medium problems/Odd Even Linked List.md~",
     "College-STS/Sem-6/3. Segregate Even and Odds in LL.md~",
-    "College-STS/Sem-6/4. Merge Sort for DLL.md~",
-    "College-STS/Sem-6/2. Sort Bitonic DLL.md~"
+    "College-STS/Sem-6/4. Merge Sort for DLL.md~"
   ]
 }
