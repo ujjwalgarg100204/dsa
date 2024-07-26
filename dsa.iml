@@ -8,4 +8,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="JavaProjectCodeManager">
+      <option name="INSPECTION_TOOL_SUPPRESSIONS">
+          <list>
+              <option value="UNUSED" />
+          </list>
+      </option>
+  </component>
 </module>
