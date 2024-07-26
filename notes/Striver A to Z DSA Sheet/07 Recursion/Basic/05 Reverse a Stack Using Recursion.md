@@ -1,7 +1,7 @@
 - Problem Link: [GeeksForGeeks](https://bit.ly/3podAiY)
 - Video Solution Link: NA
 ## Solution
-Refer [[05 Sort a Stack Using Recursion]]
+Refer [[04 Sort a Stack Using Recursion]]
 ```java
   public static void solution(Stack<Integer> s) {
     if (s.isEmpty()) {

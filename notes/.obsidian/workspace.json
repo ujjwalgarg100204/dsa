@@ -4,47 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "f4bb240b72781a6f",
+        "id": "34db5b760d38e54f",
         "type": "tabs",
         "children": [
           {
-            "id": "11050645d9cbba96",
+            "id": "fdd1876f185bd101",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Striver A to Z DSA Sheet/07 Recursion/01 Recursive Implementation of atoi Function.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6b6199a09b3a89ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Striver A to Z DSA Sheet/07 Recursion/02 Pow Function.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "421ffe135111017e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Striver A to Z DSA Sheet/07 Recursion/03 Count Good Number.md",
+                "file": "Striver A to Z DSA Sheet/07 Recursion/Sub-Sequence pattern/03 Generate Power set.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Striver A to Z DSA Sheet/07 Recursion/03 Count Good Number.md",
+                "file": "Striver A to Z DSA Sheet/07 Recursion/Sub-Sequence pattern/03 Generate Power set.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Striver A to Z DSA Sheet/07 Recursion/03 Count Good Number.md",
+                "file": "Striver A to Z DSA Sheet/07 Recursion/Sub-Sequence pattern/03 Generate Power set.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Striver A to Z DSA Sheet/07 Recursion/03 Count Good Number.md"
+                "file": "Striver A to Z DSA Sheet/07 Recursion/Sub-Sequence pattern/03 Generate Power set.md"
               }
             }
           }
@@ -171,11 +146,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d6d1b88f9519b15b",
+  "active": "fdd1876f185bd101",
   "lastOpenFiles": [
-    "Striver A to Z DSA Sheet/07 Recursion/02 Pow Function.md",
-    "Striver A to Z DSA Sheet/07 Recursion/03 Count Good Number.md",
-    "Striver A to Z DSA Sheet/07 Recursion/01 Recursive Implementation of atoi Function.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Sub-Sequence pattern/02 Generate Parenthesis.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Sub-Sequence pattern/01 Count Good Number.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Basic/05 Reverse a Stack Using Recursion.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Basic/04 Sort a Stack Using Recursion.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Basic/03 Generate All Binary Strings With no Consecutive 1s.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Basic/01 Recursive Implementation of atoi Function.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Basic/02 Pow Function.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Sub-Sequence pattern/03 Generate Power set.md",
+    "Striver A to Z DSA Sheet/07 Recursion/Basic",
+    "Striver A to Z DSA Sheet/07 Recursion/Sub-Sequence pattern",
+    "assets",
+    "assets/IMG_20240726_111247.jpg",
     "Striver A to Z DSA Sheet/07 Recursion",
     "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/12 Find Peak Element.md",
     "Striver A to Z DSA Sheet/04 Binary Search/1 D Array/11 Single Element in Sorted Array.md",
@@ -198,16 +182,7 @@
     "Striver A to Z DSA Sheet/04 Binary Search/1 D Array",
     "Striver A to Z DSA Sheet/04 Binary Search",
     "Striver A to Z DSA Sheet/03 Arrays/medium/12 Rotate Matrix by 90 Degrees.md",
-    "Striver A to Z DSA Sheet/03 Arrays/easy/12 Longest Subarray With Given Sum.md",
-    "Striver A to Z DSA Sheet/03 Arrays/medium/14 Count Sub-arrays with Given Sum.md",
-    "Striver A to Z DSA Sheet/03 Arrays/medium/13 Print The Matrix in Spiral Manner.md",
-    "Striver A to Z DSA Sheet/03 Arrays/medium/11 Set Matrix Zeroes.md",
-    "Striver A to Z DSA Sheet/03 Arrays/medium/10 Longest Consecutive Subsequence in Array.md",
-    "Striver A to Z DSA Sheet/03 Arrays/medium/09 Leader in Array.md",
     "College-STS/Sem-6/5. Min Stack.md~",
-    "College-STS/Sem-6/1. Loop Detection In SLL.md~",
-    "LeetCode/medium problems/Odd Even Linked List.md~",
-    "College-STS/Sem-6/3. Segregate Even and Odds in LL.md~",
-    "College-STS/Sem-6/4. Merge Sort for DLL.md~"
+    "College-STS/Sem-6/1. Loop Detection In SLL.md~"
   ]
 }
