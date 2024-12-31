@@ -1,0 +1,17 @@
+fn main() {
+    solve();
+}
+
+fn solve() {
+    // TODO: Implement solution
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_solution() {
+        // TODO: Add test cases
+    }
+}
